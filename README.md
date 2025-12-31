@@ -12,9 +12,10 @@ Design Tool: DBeaver
 Language: SQL
 
 ## ディレクトリ構成 / Directory Structure
-Plaintext
+```text
 .
 └── DB
     └──DDL
         ├── jam_sessions.sql  -- セッション全体を管理する親テーブル
         └── session_songs.sql  -- 演奏曲を管理する子テーブル（1対多のリレーション）
+```

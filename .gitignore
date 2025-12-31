@@ -1,0 +1,9 @@
+target/
+.settings/
+.classpath
+.project
+*.class
+.DS_Store
+Thumbs.db
+*.log
+Servers/

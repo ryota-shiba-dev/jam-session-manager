@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>セッションログメイン</title>
+    <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+    <header>
+        <h1>セッションログ登録</h1>
+    </header>
+
+    <form action="register" method="post">
+        <table>
+            <tr>
+                <td>タイトル：</td>
+                <td><input type="text" name="title"></td>
+            </tr>
+            <tr>
+                <td>日付：</td>
+                <td><input type="date" name="session_date"></td>
+            </tr>
+            <tr>
+                <td>場所：</td>
+                <td><input type="text" name="location"></td>
+            </tr>
+            <tr>
+                <td>感想：</td>
+                <td><textarea name="review"></textarea></td>
+            </tr>
+        </table>
+
+        <button type="submit">登録</button>
+    </form>
+
+    <footer>
+        <p>© りょうたんセッションログ</p>
+    </footer>
+</body>
+
+</html>

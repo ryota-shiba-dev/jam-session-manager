@@ -19,11 +19,16 @@ Language: SQL
 
 ## ディレクトリ構成 / Directory Structure
 ```text
-.
-└── DB
-    └──DDL
-        ├── jam_sessions.sql  -- セッション全体を管理する親テーブル
-        └── session_songs.sql  -- 演奏曲を管理する子テーブル（1対多のリレーション）
+JamSessionManager
+├── src/main/java
+│   ├── model       (データベースとのやり取りやデータ保持用クラス)
+│   └── servlet     (画面遷移やリクエストを制御するコントローラー)
+├── webapp
+│   ├── css
+│   │    └── index.css
+│   ├── jsp         (画面表示用のファイル)
+│   └── main.html   (トップ画面)
+└── DB/DDL          (データベース作成用のSQLファイル)
 ```
 
 

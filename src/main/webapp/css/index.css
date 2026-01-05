@@ -1,0 +1,31 @@
+/* 背景色 */
+body {
+    background-color: lightgoldenrodyellow;
+}
+
+/* 見出し */
+h1 {
+    text-align: center;
+    font-weight: 600;
+}
+
+/*本文*/
+body{
+   text-align: center;
+    font-weight: 300;
+}
+
+/* フォーム全体を中央に */
+form {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* テーブル内のラベルと入力欄の間をちょっと余裕持たせる */
+td {
+  padding: 8px;
+}

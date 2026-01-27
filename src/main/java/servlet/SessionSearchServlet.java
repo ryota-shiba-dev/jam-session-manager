@@ -34,27 +34,52 @@ public class SessionSearchServlet extends HttpServlet {
 		String session_date = request.getParameter("session_date");
 		String location = request.getParameter("location");
 		String review = request.getParameter("review");
+		StringBuilder sql = new StringBuilder("SELECT * FROM jam_sessions WHERE 1=1");
+		List<String> params = new ArrayList<>();
 
+		// 値が入っている時だけ、SQLに条件を追加していく
+		if (title != null && !title.isEmpty()) {
+			sql.append(" AND title LIKE ?");
+			params.add("%" + title + "%");
+		}
+		if (session_date != null && !session_date.isEmpty()) {
+			sql.append(" AND session_date LIKE ?");
+			params.add("%" + session_date + "%");
+		}
+		if (location != null && !location.isEmpty()) {
+			sql.append(" AND location LIKE ?");
+			params.add("%" + location + "%");
+		}
+		if (review != null && !review.isEmpty()) {
+			sql.append(" AND review LIKE ?");
+			params.add("%" + review + "%");
+		}
+
+		sql.append(" ORDER BY session_date DESC");
+		System.out.println("データを見つけました！: " + session_date);
 		try {
 			Class.forName("org.postgresql.Driver");
-			try (Connection conn = DriverManager.getConnection(url, user, password)) {
-				String sql = "SELECT * FROM jam_sessions WHERE title LIKE ? ORDER BY session_date DESC";
-				try (PreparedStatement ps = conn.prepareStatement(sql)) {
-					ps.setString(1, "%" + title + "%");
+			try (Connection conn = DriverManager.getConnection(url, user, password);
+					PreparedStatement ps = conn.prepareStatement(sql.toString())) {
 
-					try (ResultSet rs = ps.executeQuery()) {
-						while (rs.next()) {
+				// paramsリストに入れた順番で、PreparedStatementにセットする
+				for (int i = 0; i < params.size(); i++) {
+					ps.setString(i + 1, params.get(i));
+				}
 
-							Session s = new Session();
-							s.setId(rs.getInt("id"));
-							s.setTitle(rs.getString("title"));
-							s.setSessionDate(rs.getString("session_date"));
-							s.setLocation(rs.getString("location"));
-							s.setReview(rs.getString("review"));
-							list.add(s);
-						}
+				try (ResultSet rs = ps.executeQuery()) {
+					while (rs.next()) {
+
+						Session s = new Session();
+						s.setId(rs.getInt("id"));
+						s.setTitle(rs.getString("title"));
+						s.setSessionDate(rs.getString("session_date"));
+						s.setLocation(rs.getString("location"));
+						s.setReview(rs.getString("review"));
+						list.add(s);
 					}
 				}
+
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

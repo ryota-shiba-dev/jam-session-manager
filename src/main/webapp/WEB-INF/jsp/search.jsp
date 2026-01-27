@@ -15,7 +15,7 @@
             </tr>
             <tr>
                 <td>日付：</td>
-                <td><input type="date" name="session_date"></td>
+                <td><input type="month" name="session_date"></td>
             </tr>
             <tr>
                 <td>場所：</td>

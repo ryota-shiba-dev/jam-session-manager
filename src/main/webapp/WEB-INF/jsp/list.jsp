@@ -7,7 +7,7 @@
 <title>セッション一覧</title>
 </head>
 <body>
-    <h1>開催予定のセッション一覧</h1>
+    <h1>セッション一覧</h1>
     <table border="1">
         <tr>
             <th>タイトル</th><th>日付</th><th>場所</th><th>メモ</th>

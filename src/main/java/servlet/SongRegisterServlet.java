@@ -36,7 +36,8 @@ public class SongRegisterServlet extends HttpServlet {
 			Class.forName("org.postgresql.Driver");
 			try (Connection conn = DriverManager.getConnection(url, user, password);
 					PreparedStatement ps = conn
-							.prepareStatement("SELECT id, substring(session_date,1,10) AS short_date, location FROM jam_sessions ORDER BY session_date DESC");
+							.prepareStatement(
+									"SELECT id, substring(session_date,1,10) AS short_date, location FROM jam_sessions ORDER BY session_date DESC");
 					ResultSet rs = ps.executeQuery()) {
 
 				while (rs.next()) {
@@ -63,7 +64,7 @@ public class SongRegisterServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		// 1. フォーム(main.html)からの値を受け取る 
-		String session_id = request.getParameter("session_id");
+		String sessionIdStr = request.getParameter("session_id");
 		String song_name = request.getParameter("song_name");
 		String youtube_url = request.getParameter("youtube_url");
 		String song_review = request.getParameter("song_review");
@@ -85,7 +86,8 @@ public class SongRegisterServlet extends HttpServlet {
 			try (Connection conn = DriverManager.getConnection(url, user, password);
 					PreparedStatement ps = conn.prepareStatement(sql)) {
 
-				ps.setString(1, session_id);
+				int sessionId = Integer.parseInt(sessionIdStr);
+				ps.setInt(1, sessionId);
 				ps.setString(2, song_name);
 				ps.setString(3, youtube_url);
 				ps.setString(4, song_review);
@@ -94,7 +96,7 @@ public class SongRegisterServlet extends HttpServlet {
 			}
 
 			// 5. 登録成功後、結果表示JSPへ移動
-			request.getRequestDispatcher("register_result.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/jsp/register_result.jsp").forward(request, response);
 
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="css/index.css" />
 </head>
 <body>
+	<h1>セッション検索</h1>
 	<form action="search" method="post">
 		<table>
 			<tr>
@@ -30,13 +31,10 @@
 
 		<button type="submit">検索</button>
 	</form>
-	
-		<div class="container">
+
+	<div class="container">
 		<div>
 			<a href="list">一覧</a>
-		</div>
-		<div>
-			<a href="search">検索</a>
 		</div>
 		<div>
 			<a href="main.html">メイン画面に戻る</a>

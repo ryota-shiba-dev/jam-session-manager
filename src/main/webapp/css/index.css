@@ -31,3 +31,11 @@ td {
   display: flex; /* Flexboxを有効にする */
   flex-direction: column; /* 子要素を縦方向に並べる */
 }
+table {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

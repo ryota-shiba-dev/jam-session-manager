@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Song implements Serializable {
 	private int id;
-	private String session_id;
+	private int session_id;
 	private String song_name;
 	private String youtube_url;
 	private String song_review;
@@ -20,11 +20,11 @@ public class Song implements Serializable {
 		this.id = id;
 	}
 
-	public String getSessionId() {
+	public int getSessionId() {
 		return session_id;
 	}
 
-	public void setSessionId(String session_id) {
+	public void setSessionId(int session_id) {
 		this.session_id = session_id;
 	}
 

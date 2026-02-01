@@ -36,9 +36,6 @@
 	<br>
 	<div class="container">
 		<div>
-			<a href="list">一覧</a>
-		</div>
-		<div>
 			<a href="search">検索</a>
 		</div>
 		<div>

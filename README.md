@@ -25,7 +25,7 @@ JamSessionManager
 │   └── servlet     (画面遷移やリクエストを制御するコントローラー)
 ├── webapp
 │   ├── css
-│   │    └── index.css
+│   │    └── css/index.css
 │   ├── jsp         (画面表示用のファイル)
 │   └── main.html   (トップ画面)
 └── DB/DDL          (データベース作成用のSQLファイル)

@@ -4,40 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <title>セッションログメイン</title>
-   <!-- <link rel="stylesheet" href="index.css" /> -->
+   <link rel="stylesheet" href="css/index.css" />
 </head>
 
 <body>
     <header>
-        <h1>セッションログ登録</h1>
+        <h1>セッションログ管理アプリ</h1>
     </header>
-
-    <form action="register" method="post">
-        <table>
-            <tr>
-                <td>タイトル：</td>
-                <td><input type="text" name="title"></td>
-            </tr>
-            <tr>
-                <td>日付：</td>
-                <td><input type="date" name="session_date"></td>
-            </tr>
-            <tr>
-                <td>場所：</td>
-                <td><input type="text" name="location"></td>
-            </tr>
-            <tr>
-                <td>感想：</td>
-                <td><textarea name="review"></textarea></td>
-            </tr>
-        </table>
-
-        <button type="submit">登録</button>
-    </form>
-
+    <div class="container">
+		<div><a href="register">新規登録(セッション情報)</a></div>
+		<div><a href="songregister">新規登録(曲情報)</a></div>
+		<div><a href="list">一覧</a></div>
+		<div><a href="search">検索</a></div>
+</div>
     <footer>
-		<a href="list">一覧</a>
-		<a href="search">検索</a>
         <p>©セッションログ</p>
     </footer>
 </body>

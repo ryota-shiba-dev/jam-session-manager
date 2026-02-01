@@ -1,15 +1,16 @@
 package model;
+
 import java.io.Serializable;
 
 public class Session implements Serializable {
-    private int id;
-    private String title;
-    private String session_date;
-    private String location;
-    private String review;
+	private int id;
+	private String title;
+	private String session_date;
+	private String location;
+	private String review;
 
-    // 引数なしのコンストラクタ（お作法）
-    public Session() {}
+	public Session() {
+	}
 
 	public int getId() {
 		return id;

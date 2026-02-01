@@ -1,18 +1,16 @@
-/* 背景色 */
+/* 背景色・本文 */
 body {
     background-color: lightgoldenrodyellow;
+    text-align: center;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
 }
 
 /* 見出し */
 h1 {
     text-align: center;
     font-weight: 600;
-}
-
-/*本文*/
-body{
-   text-align: center;
-    font-weight: 300;
 }
 
 /* フォーム全体を中央に */
@@ -28,4 +26,8 @@ form {
 /* テーブル内のラベルと入力欄の間をちょっと余裕持たせる */
 td {
   padding: 8px;
+}
+.container {
+  display: flex; /* Flexboxを有効にする */
+  flex-direction: column; /* 子要素を縦方向に並べる */
 }

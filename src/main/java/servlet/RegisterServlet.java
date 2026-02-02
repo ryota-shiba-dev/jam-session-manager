@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.Timestamp;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -54,8 +53,7 @@ public class RegisterServlet extends HttpServlet {
                  PreparedStatement ps = conn.prepareStatement(sql)) {
 
                 ps.setString(1, title);
-                // HTMLの日付(yyyy-MM-dd)をDBのTIMESTAMP型に変換
-                ps.setTimestamp(2, Timestamp.valueOf(session_date + " 00:00:00"));
+                ps.setString(2, session_date);
                 ps.setString(3, location);
                 ps.setString(4, review);
 

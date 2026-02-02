@@ -1,41 +1,160 @@
-/* 背景色・本文 */
-body {
-    background-color: lightgoldenrodyellow;
-    text-align: center;
-    font-weight: 300;
-    margin: 0;
-    padding: 0;
-}
-
-/* 見出し */
-h1 {
-    text-align: center;
-    font-weight: 600;
-}
-
-/* フォーム全体を中央に */
-form {
-  width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* テーブル内のラベルと入力欄の間をちょっと余裕持たせる */
-td {
-  padding: 8px;
-}
+	/* 全体：落ち着いたオフホワイト */
+	body {
+	    background-color: #fcfaf5;
+	    color: #333;
+	    font-family: 'Helvetica Neue', Arial, sans-serif;
+	    display: flex;
+	    flex-direction: column;
+	    align-items: center;
+	    padding-top: 50px;
+	    margin: 0;
+	}
+	
+	/* タイトル：太字で力強く */
+	h1 {
+	    font-size: 2.2rem;
+	    font-weight: 700;
+	    margin-bottom: 5px;
+	    color: #2c3e50;
+	}
+	
+	/* タイトル下のゴールドの線 */
+	.title-underline {
+	    width: 60px;
+	    height: 3px;
+	    background-color: #d4af37;
+	    margin-bottom: 40px;
+	}
+	
+	/* メインの白いカード */
+	.container {
+	    background: #ffffff;
+	    border-radius: 20px;
+	    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+	    padding: 50px;
+	    width: 85%;
+	    max-width: 800px;
+	    /* ボタンを左寄せにするための設定 */
+	    display: flex;
+	    flex-direction: column;
+	    align-items: flex-start; 
+	}
+	
+	/* カプセルボタンのデザイン (image_01bb99を再現) */
+	a {
+	    display: inline-block;
+	    padding: 12px 30px;
+	    margin-bottom: 15px;
+	    color: #d4af37;
+	    text-decoration: none;
+	    font-weight: 600;
+	    border: 2px solid #d4af37;
+	    border-radius: 50px; /* カプセル型 */
+	    transition: all 0.2s ease;
+	}
+	
+	/* ホバーした時だけ色をつける */
+	a:hover {
+	    background-color: #d4af37;
+	    color: #fff;
+	}
+	
+	/* フッター */
+	footer {
+	    margin-top: 30px;
+	    font-size: 0.8rem;
+	    color: #999;
+	}
+	
+	/* テーブル全体を囲むカードの微調整 */
+	.table-container {
+	    background: #ffffff;
+	    border-radius: 15px;
+	    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+	    padding: 20px;
+	    margin-top: 20px;
+	}
+	
+	/* テーブル自体の設定 */
+	table {
+	    width: 100%;
+	    border-collapse: collapse; /* 二重線を解消 */
+	    margin: 10px 0;
+	}
+	
+	/* 見出し：シンプルに下線（ゴールド）だけで強調 */
+	th {
+	    text-align: left;
+	    padding: 15px;
+	    color: #2c3e50;
+	    font-weight: 600;
+	    border-bottom: 2px solid #d4af37; /* タイトル下の線と合わせる */
+	    font-size: 0.9rem;
+	}
+	
+	/* 各セル：余白を広げて見やすく */
+	td {
+	    padding: 18px 15px;
+	    border-bottom: 1px solid #f0f0f0;
+	    color: #555;
+	    vertical-align: middle;
+	}
+	
+	/* 行にマウスを乗せた時の動き */
+	tr:hover {
+	    background-color: #fdfaf5; /* ほんのりゴールド系の背景に */
+	}
+	
+	/* テーブル内の「詳細」や「YouTube」リンクを小さいボタンに */
+	.table-link {
+	    display: inline-block;
+	    padding: 6px 15px;
+	    font-size: 0.8rem;
+	    color: #d4af37;
+	    text-decoration: none;
+	    border: 1px solid #d4af37;
+	    border-radius: 20px; /* カプセル型を継承 */
+	    transition: all 0.2s;
+	}
+	
+	.table-link:hover {
+	    background-color: #d4af37;
+	    color: #fff;
+	}
+	
+	/* 奇数行にだけ、消えそうなほど薄いゴールドを敷く */
+	tr:nth-child(odd) {
+	    background-color: rgba(212, 175, 55, 0.03); 
+	}
+	
+	/* 枠線は一切なし */
+	td, th {
+	    border: none;
+	    padding: 20px;
+	}
+	
+	/* コンテナ（白い枠）の設定を修正 */
 .container {
-  display: flex; /* Flexboxを有効にする */
-  flex-direction: column; /* 子要素を縦方向に並べる */
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    padding: 60px; /* 上下左右の余白を均等に */
+    width: 85%;
+    max-width: 600px; /* 💡 幅を少し絞ると、よりまとまって見える */
+    margin: 0 auto;
+    
+    /* 💡 中身を中央に寄せる魔法の3行 */
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
 }
-table {
-  width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+/* ボタンの幅を統一するとさらに綺麗 */
+a {
+    display: block;
+    width: 250px; /* 💡 すべてのボタンの長さを揃える */
+    text-align: center; /* 文字も中央に */
+    padding: 12px 0;
+    margin-bottom: 20px;
+    /* ...他の装飾はそのまま... */
 }

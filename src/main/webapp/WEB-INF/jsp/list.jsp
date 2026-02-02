@@ -16,6 +16,7 @@
 			<th>日付</th>
 			<th>場所</th>
 			<th>メモ</th>
+			<th>詳細</th>
 		</tr>
 		<%
 		List<Session> list = (List<Session>) request.getAttribute("sessionList");
@@ -27,6 +28,7 @@
 			<td><%=s.getSessionDate()%></td>
 			<td><%=s.getLocation()%></td>
 			<td><%=s.getReview()%></td>
+			<td><a href="songlist?id=<%=s.getId()%>">詳細を見る</a></td>
 		</tr>
 		<%
 		}
